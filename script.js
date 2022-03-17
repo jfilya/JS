@@ -31,7 +31,27 @@ myArray.splice(1,1); //['a', 'c', 'd']
 
 
 
- var array = [];
- for (var i =0; i<10; i++){
-     array.push(i);
- }
+var array = [];
+for (var i =0; i<10; i++){
+    array.push(i);
+}//[0,1,2,3,4,5,6,7,8,9]
+
+
+
+function sum(a,b) {
+    return a+b;
+}
+
+var division = function (a, b){
+    return a/b;
+}
+
+function explode(s) {
+    return s.split('').map(arr=>{
+      let clone = '';
+      for(let i = 0; i < +arr; i++){
+       clone += arr;
+      }
+      return clone;
+    }).join('')
+  }
