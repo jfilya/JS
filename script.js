@@ -8,16 +8,16 @@ console.log(0.1 + 0.2)//0.3000000000004
 
 var b = {aa: 1, aaa:{b:2}}
 JSON.stringify(b);// 
-console.log(b)
-JSON.parse('{aa: 1, aaa:{b:2}}')
+console.log(b);
+// JSON.parse('{aa: 1, aaa:{b:2}}');
 
-parseInt("045str", 10) //45 
-parseInt(045+ 'str', 10)//37 здесь посчитаем число в 8ричной системе (стараемся избегать вот таких сложений))
+parseInt("045str", 10); //45 
+parseInt(045+ 'str', 10);//37 здесь посчитаем число в 8ричной системе (стараемся избегать вот таких сложений))
 //после запятой указываем систему 
 
-var num = 42
+var num = 42;
 //три способа преобразования в строку
-string(num);//42
+// string(num);//42
 num.toString();//42
 " " + num; //42 (сложить строку с числом = строка)
 
@@ -46,12 +46,62 @@ var division = function (a, b){
     return a/b;
 }
 
-function explode(s) {
-    return s.split('').map(arr=>{
-      let clone = '';
-      for(let i = 0; i < +arr; i++){
-       clone += arr;
-      }
-      return clone;
-    }).join('')
-  }
+
+
+
+
+
+
+
+// Scope- места, где доступны переменные
+
+// Scope:
+// -global
+// -local
+
+function space() {
+    var loki='loki';
+
+    function planet() {
+        var god ='god';
+        console.log(loki,god);
+        //здесь переменные наследуются
+    }
+    planet();
+}
+space();// loki god
+
+function calculate () {
+    var x =3, y = 5;
+
+    function calculateInner() {
+        var y = 7, c = 11;
+        x += y+c;// в переменную x добавляется конструкция y+c (a=a+y+c) (3 += 7+11)
+    };
+    calculateInner();
+    console.log('x=', x , ';','y=', y);//x=21, y=5
+}
+calculate();
+
+//hoisting(всплытие) - все объявления переменных и функций всплывают вверх их непосредственного скоупа
+xspace();
+ function xspace(){
+     console.log(xloki);
+ }
+var xloki='xgod'; //underfined
+
+var yloki;
+function yspace(){
+    console.log(yloki);
+}
+yspace();
+yloki = 'ygod';//underfined
+
+
+
+// single var pattern - все переменнные, которые будут использоваться в функции, объявляются внутри функции
+
+
+// global scope - самый дальний скоуп, тот за которым ничего нет
+// для web  глобальный скоуп это window
+//local scope
