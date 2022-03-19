@@ -17,4 +17,54 @@ const getFibonacci = function fibonacci(n) {
 
 
 
+//prototype
+// const person = {
+//   name: 'Maxim',
+//   age :25,
+//   greet: function() {
+//     console.log('Greet!')
+//   }
+// };
+
+const person = new Object({
+  name: 'Maxim',
+  age :25,
+  greet: function() {
+    console.log('Greet!')
+  }
+})
+Object.prototype.sayHello = function() {
+  console.log('hello');
+}
+
+
+
+const lienasss = Object.create(person);
+lienasss.name = 'lena';
+
+
+
+ // this
+ function cookPie() {
+   console.log(this.type);// 'lemon', 'choco'
+ }
+ const lemonPie = {type:'lemon'};
+ const chocoPie = {type:'choco'};
+ lemonPie.cookPie = cookPie;
+ chocoPie.cookPie = cookPie;
+ lemonPie.cookPie();
+ chocoPie.cookPie();
+
+
+
+
+
+
+
+
+
+
+
+
+
 
