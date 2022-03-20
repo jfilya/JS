@@ -37,8 +37,6 @@ Object.prototype.sayHello = function() {
   console.log('hello');
 }
 
-
-
 const lienasss = Object.create(person);
 lienasss.name = 'lena';
 
