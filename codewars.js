@@ -72,10 +72,13 @@ function head(arr){
 
 
 //функция, которая возвращает количество ВСЕХ элементов в массиве, включая любые внутри массивов внутреннего уровня.
-    function deepCount(a){
-          let b = a.join(',');
-          console.log(b);
-          let c = b.split(',');
-          return b.length;
-      }
-   deepCount([[[Array]]]);
+function deepCount(a){
+  let x = a.length;
+  for (let i=0; i<a.length; i++){
+  if (Array.isArray(a[i])){
+    count += deepCount(a[i]);
+    }
+  }  
+  return x;
+}
+deepCount([1, 2, [3, 4, [5]]]);
