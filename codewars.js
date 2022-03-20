@@ -13,39 +13,26 @@ function getParticipants(handshakes){
 
 
 
+//преобразовать строку в новую строку, где каждый символ в новой строке — это «(», если этот символ встречается в исходной строке только один раз, или «)», если этот символ встречается в исходной строке более одного раза. Игнорировать заглавные буквы 
+function duplicateEncode(word){
+  let report = word
+  .toLowerCase()
+  .split(',')
+  .map(letter => {
+    let x='';
+      for (let i=0; i<letter.length; i++){
+      if(letter.indexOf(letter[i]) === letter.lastIndexOf(letter[i])){
+        x += '(';
+      } 
+      else x+= ')';
+      }
+  return x;
+  })
+  .toString('');
 
-
-
-
-// function duplicateEncode(word){
-// let lower = word.toLowerCase().split();
-// console.log(lower);
-// let a="";
-// for (let i=0; i<lower.length; i++){
-//     if (lower.indexOf[i] === lower.lastIndexOf[i]){ 
-//         lower[i] = "(";
-//     }
-//     else lower[i] =")";
-        
-// }
-// console.log(lower);
-// return lower;
-// }
-//   duplicateEncode("recede");
-// function duplicateEncode(word){
-//     let lower = word.toLowerCase().split('');
-//     let x='';
-//     for (let i=0; i<=lower.length; i++){
-//       if(lower.indexOf(i) == lower.lastIndexOf(i)){
-//         x += '(';
-//       } 
-//       else x+= ')';
-//       }
-//   return x;
-//   }
-//   duplicateEncode("recede");
-
-
+ console.log(report);
+  }
+  duplicateEncode('recede');
 
 
 
@@ -84,10 +71,11 @@ function head(arr){
 
 
 
-//функциz, которая возвращает количество ВСЕХ элементов в массиве, включая любые внутри массивов внутреннего уровня.
+//функция, которая возвращает количество ВСЕХ элементов в массиве, включая любые внутри массивов внутреннего уровня.
     function deepCount(a){
-          let b = a.join();
+          let b = a.join(',');
+          console.log(b);
           let c = b.split(',');
-          return c.length;
+          return b.length;
       }
-   deepCount([1,2,3,[1,2,[1],4]]);
+   deepCount([[[Array]]]);
