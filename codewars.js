@@ -129,3 +129,21 @@ function numberOfPairs(gloves){
 numberOfPairs(["red", "green", "red", "blue", "blue"]);
 
 
+
+
+//сортировка массива по битам
+function sortByBit(arr) {
+  
+  const countBit=(bit)=>bit.toString(2).replace(/[0]/g,'').length
+   
+  const arrBit = arr.sort(function(a,b){
+     if (countBit(a)===countBit(b)){
+       return (a-b);
+     }
+       else
+      return countBit(a)-countBit(b)
+  })
+   return arrBit;
+}
+sortByBit([3, 8, 3, 6, 5, 7, 9, 1]) ;
+
