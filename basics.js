@@ -16,8 +16,12 @@ for (let person of people){
     console.log(person);
 }
 
-//ForEach
 
+
+
+
+
+//ForEach
 people.forEach(function(person, index, pArr){
     console.log(person);//{name: 'Владилен', age: 25, budget: 4000}
     console.log(index);// порядковый номер элемента массива (0-6)
@@ -25,11 +29,12 @@ people.forEach(function(person, index, pArr){
 })// 
 
 
-
 people.forEach(function(person){
     console.log(person);
 })//2 аналогичные записи
 people.forEach(person => console.log(person));// стрелочная функция
+
+
 
 
 
@@ -40,12 +45,10 @@ const newPeople = people.map(person =>{
 console.log(newPeople);//(6) ['hello', 'hello', 'hello', 'hello', 'hello', 'hello']
 
 
-
 const newPeoples = people.map(person =>{
     return person.name;
 })
 console.log(newPeoples);//(6)['Владилен', 'Елена', 'Игорь', 'Михаил', 'Василиса', 'Виктория']
-
 
 
 const newPeoples1 = people.map(person =>{

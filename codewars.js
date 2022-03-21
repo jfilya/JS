@@ -76,9 +76,56 @@ function deepCount(a){
   let x = a.length;
   for (let i=0; i<a.length; i++){
   if (Array.isArray(a[i])){
-    count += deepCount(a[i]);
-    }
-  }  
+      x += deepCount(a[i]);
+      }
+    }  
   return x;
 }
 deepCount([1, 2, [3, 4, [5]]]);
+
+
+
+
+//
+function getLengthOfMissingArray(arrayOfArrays) {
+  const arr = (arrayOfArrays || [])
+    .map(function(array){
+      console.log(array);
+      if(array == true){
+        
+        return array.length; 
+      }
+      else return 0;
+    })
+    .sort((a, b) => a - b);
+  if (arr.includes(0)) {
+    return 0;
+  };
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] + 1 !== arr[i + 1]) {
+      return arr[i] + 1;
+    }
+  }
+  return 0;
+}
+getLengthOfMissingArray([ [ 1, 2 ], [ 4, 5, 1, 1 ], [], [ 5, 6, 7, 8, 9 ]] );
+
+
+
+
+
+//количество пар, которые вы можете составить, предполагая, что только перчатки одного цвета могут образовывать пары.
+function numberOfPairs(gloves){
+  const arr = gloves.slice().sort();
+  let pair =0;
+  for (let i=1; i<arr.length; i++){
+  if (arr[i-1] === arr[i]){
+      pair++;
+      i++;
+    } 
+  } 
+  return pair;
+}
+numberOfPairs(["red", "green", "red", "blue", "blue"]);
+
+
