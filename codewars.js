@@ -198,3 +198,17 @@ function elevator(left, right, call){
     return 'left'
   } else return 'right'  
 }
+
+//Ваша функция принимает три аргумента:количество столбов (≥ 1);расстояние между столбами (10 – 30 метров);ширина столба (10 – 50 сантиметров).Рассчитайте расстояние между первым и последним столбом в сантиметрах (без ширины первого и последнего столба)
+//
+function pillars(num_pill, dist, width) {
+  const distance = dist*100;
+  let result = 0;
+  if (num_pill == 1){
+    return 0;
+  } else if (num_pill == 2){
+    return distance;
+  } else {
+  return result =((num_pill - 2) * width)+(distance * (num_pill-1));   
+  }
+}
