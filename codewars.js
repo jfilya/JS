@@ -165,3 +165,25 @@ const quarterOf = (month) => {
    return 4;
   }   
 }
+
+
+
+// функция, которая берет ​​коллекцию результатов сыгранных матчей и считает очки нашей команды в чемпионате. 
+function points(games) {
+  let result =0;
+  const game = games.map(function (element){
+  const arr = element.toString(',').split('');
+    if (arr[0]> arr[2]){
+      result+=3;
+    } else if (arr[0]<arr[2]){
+      result+=0;
+    }
+    else if (arr[0]==arr[2]){
+      result+=1;
+    }
+})
+return result;
+}
+points(['1:0','2:0','3:0','4:0','2:1','3:1','4:1','3:2','4:2','4:3']);
+
+
