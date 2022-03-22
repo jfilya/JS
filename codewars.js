@@ -212,3 +212,9 @@ function pillars(num_pill, dist, width) {
   return result =((num_pill - 2) * width)+(distance * (num_pill-1));   
   }
 }
+
+//Подсчитайте, сколько лет назад отец был вдвое старше сына (или через сколько лет он будет вдвое старше).
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  let result = Math.abs(dadYearsOld - 2 * sonYearsOld);
+  return result;  
+}
