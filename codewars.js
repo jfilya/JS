@@ -218,3 +218,14 @@ function twiceAsOld(dadYearsOld, sonYearsOld) {
   let result = Math.abs(dadYearsOld - 2 * sonYearsOld);
   return result;  
 }
+
+// Ваша задача — просуммировать различия между последовательными парами в массиве в порядке убывания.
+// Например: сумма различий ([2, 1, 10]) Возвращает 9 По убыванию: [10, 2, 1] Сумма: (10 - 2) + (2 - 1) = 8 + 1 = 9
+function sumOfDifferences(arr) {
+  const array= arr.sort((a, b) => b - a);
+  let result=0;
+  for(let i=0; i<array.length-1; i++){  
+      result +=  Math.abs(array[i]-array[i+1]);
+  }
+  return result;
+}
