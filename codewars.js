@@ -254,3 +254,20 @@ function pigIt(str){
   }  
   return total;
 }
+
+
+
+
+//Вы пишете функцию, которая принимает два набора аргументов произвольной длины. Возвращаемое значение будет суммой значений всех аргументов.
+const calculate = (...a)=>(...b)=> { 
+  let sumA=0;
+    for( let i=0; i< a.length; i++){
+    sumA+=a[i];     
+    }
+  let sumB=0;
+    for( let i=0; i< b.length; i++){
+      sumB+=b[i];   
+    }
+  let sum = sumA+sumB;
+  return sum;
+}
