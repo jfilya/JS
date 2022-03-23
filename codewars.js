@@ -229,3 +229,28 @@ function sumOfDifferences(arr) {
   }
   return result;
 }
+
+//Переместите первую букву каждого слова в конец, а затем добавьте «ay» в конец слова. Оставьте знаки препинания нетронутыми.
+function pigIt(str){
+  let arrMin=[];
+  let arr = str.split(' ');
+  let res = [];
+  let result =[];
+  let total = [];
+  for (let i=0;i<arr.length; i++){
+   arrMin =  arr[i].split('');   
+    for (let j=0; j<arrMin.length; j++){
+      if(j==0){
+        arrMin.push(arrMin[j]);
+        arrMin.splice(arrMin[j], 1);
+        if( arr[i] !='!' && arr[i] !='?'){
+          arrMin.push('ay');
+        }
+        res = arrMin.join('');    
+      }   
+    }           
+      result.push(res); 
+      total = result.join(' ')
+  }  
+  return total;
+}
