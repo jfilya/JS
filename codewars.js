@@ -284,3 +284,18 @@ function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
   } else return false; 
 }
 checkCoupon("123", "123", "July 9, 2015", "July 9, 2015");
+
+
+
+//Найдите количество пятниц 13 в данном году.
+function unluckyDays(year){
+  let date=0; 
+  let fry=0;
+  for (let i=0; i<12; i++){
+    date = new Date(year, i, 13);
+    if( date.getDay() === 5){
+      fry++;
+    } 
+  }
+  return fry;
+}
