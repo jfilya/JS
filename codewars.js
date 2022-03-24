@@ -271,3 +271,16 @@ const calculate = (...a)=>(...b)=> {
   let sum = sumA+sumB;
   return sum;
 }
+
+
+
+
+//Функция, которая проверяет, что код купона действителен и срок его действия не истек.
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+  const entDate = Date. parse(currentDate);
+  const expDate = Date. parse(expirationDate);
+  if (enteredCode === correctCode && entDate <= expDate){
+    return true;
+  } else return false; 
+}
+checkCoupon("123", "123", "July 9, 2015", "July 9, 2015");
