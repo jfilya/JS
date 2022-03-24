@@ -299,3 +299,17 @@ function unluckyDays(year){
   }
   return fry;
 }
+
+
+//Верните список языков, на которых ваша тестовая оценка не ниже 60, в порядке убывания результатов.
+function myLanguages(results) {
+  let newRes=[];
+  for (let key in results) {  
+    if (results[key]>=60){
+      newRes.push(key);
+      }
+    }
+  return newRes.sort((a, b) => results[b] - results[a]);
+}
+myLanguages({"Java" : 10, "Ruby" : 80, "Python" : 65});
+myLanguages({"Hindi" : 60, "Greek" : 71, "Dutch" : 93});
