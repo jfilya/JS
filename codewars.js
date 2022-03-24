@@ -334,3 +334,45 @@ var runLengthEncoding = function(str){
 }
 runLengthEncoding("hello world!")
  //=>      [[1,'h'], [1,'e'], [2,'l'], [1,'o'], [1,' '], [1,'w'], [1,'o'], [1,'r'], [1,'l'], [1,'d'], [1,'!']]
+
+
+
+
+
+//Сортировка мусора по материалам
+//  lввод = [
+//   {type: 'rotten apples', material: 'organic'},
+//   {type: 'out of date yogurt', material: 'organic', secondMaterial: 'plastic'},
+//   {type: 'wine bottle', material: 'glass', secondMaterial: 'paper'},
+//   {type: 'amazon box', material: 'paper'},
+//   {type: 'beer bottle', material: 'glass', secondMaterial: 'paper'}
+// ];
+// вывод = [
+//   ['wine bottle', 'amazon box', 'beer bottle'],
+//   ['wine bottle', 'beer bottle'],
+//   ['rotten apples', 'out of date yogurt'],
+//   ['out of date yogurt']
+// ];
+ function recycle(array) {
+  const a=[];
+  const paper=[];
+  const glass=[];
+  const organic=[];
+  const plastic=[];
+for (let i=0; i<array.length; i++){
+  if(array[i].material==='paper' || array[i].secondMaterial==='paper'){     
+    paper.push(array[i].type);
+  }
+ if(array[i].material === 'glass' || array[i].secondMaterial=== 'glass' ){  
+    glass.push(array[i].type); 
+  } 
+   if(array[i].material === 'organic'  || array[i].secondMaterial=== 'organic'){  
+    organic.push(array[i].type);
+  }
+ if(array[i].material === 'plastic' || array[i].secondMaterial=== 'plastic'){ 
+    plastic.push(array[i].type); 
+  }  
+}
+  a.push( paper,glass,organic,plastic)
+  return a;
+}
