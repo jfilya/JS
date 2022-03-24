@@ -313,3 +313,24 @@ function myLanguages(results) {
 }
 myLanguages({"Java" : 10, "Ruby" : 80, "Python" : 65});
 myLanguages({"Hindi" : 60, "Greek" : 71, "Dutch" : 93});
+
+
+
+
+//Для заданной строки верните список пар букв
+var runLengthEncoding = function(str){
+  let arr=[];
+  let v=1;
+  for (let i=0; i< str.length; i++){
+    if( str[i] !== str [i+1]){
+      arr.push([v, str[i]]);
+      v=1;
+    }
+    else  {
+      v++;
+    }
+  }  
+  return arr;
+}
+runLengthEncoding("hello world!")
+ //=>      [[1,'h'], [1,'e'], [2,'l'], [1,'o'], [1,' '], [1,'w'], [1,'o'], [1,'r'], [1,'l'], [1,'d'], [1,'!']]
