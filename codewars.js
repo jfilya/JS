@@ -376,3 +376,90 @@ for (let i=0; i<array.length; i++){
   a.push( paper,glass,organic,plastic)
   return a;
 }
+
+
+
+//функциz, которая форматирует продолжительность, заданную в виде количества секунд, удобным способом в виде количества днейб часов и т.д.
+function formatDuration (seconds) {
+let years = Math.floor(seconds / 31536000);
+  if(years===1){
+    years+=' year, ';
+  }
+  if(years>1){
+    years+=' years, '
+  }
+let days = Math.floor((seconds % 31536000) / 86400);  
+  if(days===1){
+  days+=' day, ';
+  }
+  if(days>1){
+    days+=' days, '
+  }
+let hours = Math.floor(((seconds % 31536000) % 86400) / 3600);
+  if(hours===1){
+  hours+=' hour';
+  }
+  if(hours>1){
+    hours+=' hours'
+  }
+let minutes = Math.floor((((seconds % 31536000) % 86400)% 3600) / 60);
+   if(minutes===1){
+  minutes+=' minute';
+  }
+  if(minutes>1){
+    minutes+=' minutes'
+  }
+                         
+let second = Math.floor((((seconds % 31536000) % 86400) % 3600) %60) /1;
+   if(second===1){
+  second+=' second';
+  }
+  if(second>1){
+    second+=' seconds'
+  }
+  if(seconds===0){
+   return 'now';
+ }
+    else  if(seconds<60){
+   return second;
+ }
+    else if(seconds<3600){
+       if (minutes>1 || second ===0){
+          return minutes;
+       }
+       if(minutes === 1){
+         return minutes+' and '+second;
+       }
+   return minutes+' and '+second
+ }
+    else if(seconds<86400){
+      if( minutes===0|| second ===0){
+        return hours;
+      }
+      return hours+', '+minutes+' and '+second;
+ }
+  else if(seconds<31536000){
+    if(minutes===0){
+      return days+hours+' and '+second;
+    }
+      if(hours===0){
+      return days+minutes+' and '+second;
+    }
+      if(second===0){
+      return days+hours+' and '+minutes;
+    }
+   return days+hours+', '+minutes+' and '+second;
+ }
+  else if(seconds>=31536000){
+    if(second===0){
+      return years+days+hours+' and '+minutes;
+    }
+    if(minutes===0){
+      return years+days+hours+' and '+second;
+    }
+    if(hours===0){
+    return years+days+minutes+' and '+second;
+    }
+   return years+days+hours+', '+minutes+' and '+second;
+ }   
+}
