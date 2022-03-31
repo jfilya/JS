@@ -483,3 +483,14 @@ const flip=(d, a)=>{
     }
 }
 
+
+
+
+//найти коэффициенты квадратного уравнения данных двух корней (x1 и x2)
+function quadratic(x1, x2){
+  const a = 1;
+  let b = -x1-x2;
+  let c = x1*x2;
+  let arr = [a,b,c];
+  return arr;
+}
