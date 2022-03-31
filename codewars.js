@@ -524,3 +524,23 @@ solution= (molarMass1, molarMass2, givenMass1, givenMass2, volume, temp) => {
 function expressionMatter(a, b, c) {
   return Math.max(a*(b+c), a*b*c, a+b*c, (a+b)*c, a+b+c);
 }
+
+
+
+//функция возвращает 100, если оценка за экзамен больше 90 или количество выполненных проектов больше 10.
+// 90, если оценка за экзамен выше 75 и количество выполненных проектов не менее 5.
+// 75, если оценка за экзамен больше 50 и количество выполненных проектов не менее 2.
+// 0, в остальных случаях
+function finalGrade (exam, projects) {
+  if (exam>90 || projects >10){
+     return 100;
+  }
+  else if (exam>75 && projects >=5){
+     return 90;
+  }
+    else if (exam>50 && projects>=2){
+     return 75;
+  }
+  else return 0;
+}
+
