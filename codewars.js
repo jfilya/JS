@@ -510,3 +510,11 @@ var countSheep = function (num){
     return chai;
   }
 }
+
+
+
+
+//Зная молекулярную массу двух молекул M1 и M2, их массы, представленные m1 и m2 в сосуде объемом V при определенной температуре T, найдите полное давление Ptotal, оказываемое этими молекулами.
+solution= (molarMass1, molarMass2, givenMass1, givenMass2, volume, temp) => {
+   return ((givenMass1/molarMass1 + givenMass2/molarMass2)* (temp+273.15)* 0.082) /volume
+}
