@@ -494,3 +494,19 @@ function quadratic(x1, x2){
   let arr = [a,b,c];
   return arr;
 }
+
+
+
+//Учитывая неотрицательное целое число, например 3, верните строку с бормотанием: «1 овца... 2 овцы... 3 овцы...». Ввод всегда будет действительным, т. е. без отрицательных целых чисел.
+var countSheep = function (num){
+  let chai="";
+  if (num === 0){
+    return "";
+  }
+  if (num > 0){
+    for (let i=1; i<=num; i++){    
+      chai += (i+' sheep...');      
+    }
+    return chai;
+  }
+}
