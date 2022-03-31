@@ -463,3 +463,23 @@ let second = Math.floor((((seconds % 31536000) % 86400) % 3600) %60) /1;
    return years+days+hours+', '+minutes+' and '+second;
  }   
 }
+
+
+
+// сортировка массива
+const flip=(d, a)=>{
+ console.log(d)
+  if (d=='R'){
+    a.sort(function(a, b) {
+      return a - b;
+    });
+    return a;
+  }
+  else {
+    a.sort(function(a, b) {
+      return b-a;
+      });
+    return a;
+    }
+}
+
