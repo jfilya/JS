@@ -569,3 +569,11 @@ function feast(beast, dish) {
   }
   else return false;
 }
+
+
+
+
+//найти ближайшее квадратное число
+function nearestSq(n){
+ return (Math.pow(Math.round(Math.sqrt(n)),2))
+}
