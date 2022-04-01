@@ -600,3 +600,13 @@ var humanYearsCatYearsDogYears = function(humanYears) {
   }
   else return [humanYears,catYears+9+(4*(humanYears-2)),dogYears+9+(5*(humanYears-2))];   
 }
+
+
+
+//Учитывая год, верните столетие, в котором он находится.
+function century(year) {
+  if(year % 100 != 0){
+    return Math.floor(year/100+1);
+  }
+  else return Math.floor(year/100);
+}
