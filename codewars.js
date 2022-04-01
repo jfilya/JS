@@ -610,3 +610,21 @@ function century(year) {
   }
   else return Math.floor(year/100);
 }
+
+
+
+//вернуть масть карты
+function defineSuit(card) {
+  if(card[card.length-1] == '♠'){
+    return 'spades';
+  }
+    if(card[card.length-1] == '♦'){
+    return 'diamonds';
+  }
+    if(card[card.length-1] == '♥'){
+    return 'hearts'
+  }
+    if(card[card.length-1] == '♣'){
+    return 'clubs'
+  }
+}
