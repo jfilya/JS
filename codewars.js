@@ -628,3 +628,16 @@ function defineSuit(card) {
     return 'clubs'
   }
 }
+
+
+
+//Вернуть новый массив, состоящий из элементов, кратных их собственному индексу
+function multipleOfIndex(array) {
+  let arr=[];
+  for (let i=0; i<array.length; i++){
+    if (array[i] % i == 0){
+      arr.push(array[i]);      
+    }   
+  }
+  return arr;
+}
