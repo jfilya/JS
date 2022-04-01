@@ -577,3 +577,26 @@ function feast(beast, dish) {
 function nearestSq(n){
  return (Math.pow(Math.round(Math.sqrt(n)),2))
 }
+
+
+
+// посчитать возвраст собаки и кошки по человеческим меркам (Кошачьи годы
+// 15 кошачьих лет за первый год
+// +9 кошачьих лет за второй год
+// +4 кошачьих года за каждый последующий год
+// Собачьи годы
+// 15 собачьих лет за первый год
+// +9 собачьих лет за второй год
+// +5 собачьих лет за каждый последующий год)
+var humanYearsCatYearsDogYears = function(humanYears) {
+  let catYears = 15;
+  let dogYears = 15;
+  
+  if(humanYears == 1){
+    return [humanYears,catYears,dogYears];
+  }
+  else  if(humanYears == 2){
+    return [humanYears,catYears+9,dogYears+9];
+  }
+  else return [humanYears,catYears+9+(4*(humanYears-2)),dogYears+9+(5*(humanYears-2))];   
+}
