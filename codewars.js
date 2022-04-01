@@ -556,3 +556,16 @@ const areaOrPerimeter = function(l , w) {
   }
   else return l*2+w*2;
 };
+
+
+//функция, которая возвращает true, если первая и последняя буква строки одинаковые
+function feast(beast, dish) {
+  let bS = beast.split('')[0];
+  let dS = dish.split('')[0];
+  let bF = beast.split('')[beast.split('').length-1];
+  let dF = dish.split('')[dish.split('').length-1];
+  if (bS == dS && bF == dF){
+    return true;
+  }
+  else return false;
+}
