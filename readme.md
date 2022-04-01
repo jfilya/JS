@@ -1,2 +1,1 @@
-#git ang githab course
-#js course
+#js course/codewars
