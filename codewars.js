@@ -544,3 +544,15 @@ function finalGrade (exam, projects) {
   else return 0;
 }
 
+
+
+
+
+
+//Вам даны длина и ширина четырехугольника. Многоугольник может быть прямоугольным или квадратным. Если это квадрат, вернуть его площадь. Если это прямоугольник, верните его периметр.
+const areaOrPerimeter = function(l , w) {
+  if(l===w){
+    return l*w;
+  }
+  else return l*2+w*2;
+};
