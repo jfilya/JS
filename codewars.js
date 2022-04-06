@@ -766,3 +766,17 @@ function turn(current, target) {
        return 'left';
     }
   }
+
+    
+    
+    
+//функцияб которая будет вставлять тире ('-') между каждыми двумя нечетными цифрами в num. Например: если число равно 454793, вывод должен быть 4547-9-3. Не считайте ноль за нечетную цифру.
+function insertDash(num) {
+ let arr= num.toString(10).split('').map(int => parseInt(int, 10))   // преобразование числа в массив чисел
+ for (let i=0; i<arr.length-1; i++){
+   if(arr[i]%2!=0 && arr[i+1]%2!=0 ){
+    arr[i]+='-';
+   }
+ }
+  return arr.join('');
+}
