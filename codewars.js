@@ -780,3 +780,16 @@ function insertDash(num) {
  }
   return arr.join('');
 }
+
+    
+    
+    
+  //Примеры pattern(3) должен возвращать "1\n1*2\n1**3", например : (pattern(7),"1\n1*2\n1**3\n1***4\n1****5\n1*****6\n1******7");
+    function pattern(n){
+ var output="";
+  let s = '*';
+  for(let i=1; i<n; i++){
+    output+=`${i}\n1${s.repeat(i)}`;
+  }
+ return output+n;
+}
